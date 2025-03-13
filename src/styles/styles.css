@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, rgb(143, 92, 190) 0%, rgb(65, 24, 180) 100%);
+    z-index: 1;
+
+}
+
+body::before {
+    content: "";
+    background: url("planodefundo.png") no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 25%;
+}
+
+#container {
+    background: linear-gradient(360deg, rgba(98, 0, 189, 0.658) 0%, rgba(33, 17, 54, 0.644) 51%, rgba(39, 0, 145, 0.664) 100%);
+    backdrop-filter: blur(50px);
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+#search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+    padding: 4px 12px;
+    color: #ffffff;
+}
+
+#search input {
+    border: none;
+    background-color: transparent;
+    font-size: 100%;
+    width: 100%;
+    color: #ffffff;
+}
+
+#search input:focus-visible {
+    outline: none;
+}
+
+#search button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+#weather {
+    display: none;
+    margin-top: 20px;
+    outline: none;
+}
+
+#weather.show {
+    display: block;
+    margin-top: 20px;
+}
+
+
+#weather #title {
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#temp {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    backdrop-filter: blur(1px);
+    color: #ffff;
+    border-radius: 10px;
+    padding: 25px;
+    backdrop-filter: blur(50px);
+    background-color: none;
+    
+}
+
+#temp_img {
+    filter: drop-shadow(2px 2px rgba(0, 0, 0, 0.5));
+}
+
+#temp_value {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 55px;
+    
+}
+
+#temp_description {
+    font-weight: 600;
+
+}
+
+#other_infos {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    text-align: center;
+    font-weight: 100;
+}
+
+#other_infos .info {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 3px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: #ffffffe3;
+    gap: 10px;
+    color: #000000;
+}
+
+#other_infos .info h2 {
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+#other_infos .info i {
+    text-align: center;
+    font-size: 18px;
+    width: 12%;
+    height: -1%;
+    
+}
+
+#temp_max_icon {
+    color: #ff0000;
+}
+
+#temp_min_icon {
+    color: #00ccff;
+
+}
+
+#humidity_icon {
+    color: #00435e;
+
+}
+
+#wind_icon {
+    color: #016e5c;
+
+}
+
+#alert {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: #ffffffe1;
+    margin-top: 15px;
+}
+
+/* Design Responsivo para Dispostivos Móveis */
+@media (max-width: 500px) {
+
+    #container {
+        width: 95%;
+        height: 95%;
+    }
+
+    #other_infos .info {
+        justify-content: center;
+        padding: 10px 10px 15px 5px;
+        border-radius: 8px;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    #other_infos .info h2 {
+        font-size: 10px;
+        text-align: center;
+        width: 35%;
+        height: 35%;
+        justify-content: space-around;
+    }
+
+    #other_infos .info i {
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
+        width: 25%;
+    
+    }
+
+    #temp_value {
+        font-weight: bold;
+        font-size: 40.5px;
+        line-height: 55px;
+    }
+
+    #weather {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    #temp_value {
+        
+        font-size: 36.5px;
+        line-height: 45px;
+    }
+}
